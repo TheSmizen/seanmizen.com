@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+:root{/*Global css vars*/
+	--color1:#DA0926;/* Red */
+	--color2:#3F252D;/* Deep Red */
+	/*--color3:#595856;*//* Dark Grey*/
+	--color3:#777777;/* Less Dark Grey*/
+	--color4:#BD9E86;/* Tan */
+	--color5:#F36D67;/* Salmon Pink */
+
+	/*z-index goes from 4 (important/overlays) 3 (header bar), 2 (hero/banner), 1(content)*/
+	/*z-index -1 makes hyperlinks, highlighting, and a lot of interactivity unusable!*/
+
+	--z-index-important: 4;
+	--z-index-top: 3;
+	--z-index-middle: 2;
+	--z-index-bottom: 1;
+	
+	--barColor:var(--color1);
+	
+	--headFont: 'Permanent Marker';
+	--paraFont: 'Open Sans';
+	--altFont: 'Patua One';
+	
+	--paddingStandard: 10px;
+	--paddingLarge: 50px;
+	
+	--containerElementWidth: 90vw;
+	/*This sets a "standard margin" for all elements without being a margin*/
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #FFEEEE;
+}
+
+header{
+	overflow: hidden;
+	padding: 3vh;
+	height: 1.3em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	
+	background-color: var(--barColor);
+	
+	font-family: var(--headFont);
+	color: white;
+	/*font-size: 1.5em;*/
+	font-size: 4vmin;
+	z-index: var(--z-index-top);
+}
+
+#homeButton {
+	margin-left: 1vmin;
+	float: left;
+	alt-text:"test";
+}
+
+nav, .mobile-nav{
+	margin-right: 7vmin;
+	float: right;
+}
+
+.mobile-nav{
+	display: none;
+}
+
+footer{
+	overflow: hidden;
+	padding: var(--paddingStandard);
+	bottom: 0;
+	width: var(--containerElementWidth);
+	margin:0 auto;/*Align center*/
+	
+	background-color: var(--barColor);
+	
+	font-family: var(--paraFont);
+	color: white;
+	text-decoration: none;/*no underlines*/
+	z-index: var(--z-index-middle);
+}
+
+a {
+	text-decoration: none;/*No underline*/
+}
+
+.heroText, .bannerText{/*heroText, heroImg for use in home page*/
+	width: 100%;
+	vertical-align: middle;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	
+	font-family: var(--headFont);
+	color: #FFEEEE;
+	font-size: 16vmin;
+}
+
+.heroImg, .bannerImg{/*heroText, heroImg for use in home page*/
+	margin: 1.3em 0px 0px 0px;
+	padding: 0;
+	background-image: url("https://i.imgur.com/Guz5sGa.jpg");
+
+    	/*height: 500px;*/
+	height: 80vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: var(--z-index-middle);
+	display: flex;
+}
+
+.bannerImg{/*bannerImg for use in sub pages*/
+	/*Overwrite declarations above*/
+	background-image: url("https://i.imgur.com/XnBq0ID.jpg");
+	height: 35vh;
+}
+
+
+.disclaimer{
+	font-family: var(--paraFont);
+	text-align: center;	
+	margin: var(--paddingStandard);
+}
+
+.rowContainer, p1, p2, p3{
+	clear: both;/*This is the only element on this line!*/
+	border-style: none;
+	overflow: hidden;
+    	width: var(--containerElementWidth);
+	height: auto;
+	margin: var(--paddingLarge) ;
+	padding: var(--paddingStandard) ;
+	text-align: center;
+}
+
+
+p1 {
+	font-family: var(--paraFont);
+	font-size: 18px;
+}
+
+p2 {
+	font-family: var(--altFont);
+	font-size: 12px;
+}
+
+
+.inline{
+	clear: none; /*overwrite p1,p2,p3*/
+	position: relative;
+	overflow: hidden;
+	border-style: solid;
+	margin: 0;
+	z-index: var(--z-index-bottom);/*Does not overwrite header*/
+	display: inline-block;
+}
+
+.left{
+	float: left;
+}
+
+.center{
+	float: none;
+	margin: 0 auto;
+}
+
+.right{
+	float: right;
+}
+
+.inline li{
+	font-family: var(--altFont);
+	list-style-type: none;
+}
+
+.inline img{
+	width: 100%;
+	width: 30vmax;
+	height: auto;
+	alt: test;
+}
+
+.third{
+	min-width: 100px;
+	width: 25vmax;
+}
+
+.half{
+	min-width: 200px;
+	width: 40vmax;
+}
+
+
+.introVideo{
+	width: 100%;
+	height: auto;
+	float:center;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	display: inline-block;
+}
+
+nav ul li{
+	list-style-type: none;
+}
+
+nav li + li::before {/*Only appears between elements*/
+	content: " - "
+}
+
+a:link {
+	color: white; 
+	background-color: transparent; 
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--color5);
+	background-color: transparent;
+	text-decoration: none;
+}
+
+header a:visited{/*Order: this must be below a:visited for higher order of precedence*/
+	color: white;
+}
+
+h1 {/*Main page only*/
+
+	text-align: center;
+	font-family: var(--headFont);
+	color: #FFEEEE;
+	//font-size: 6em;
+	font-size: 16vmin;
+
+}
+
+h2 {/*Header for sub-pages*/
+	text-align: center;
+	font-family: var(--headFont);
+	font-size: 10vmin ;
+	margin: var(--paddingLarge) ;
+}
+
+h3 {
+	text-align: center;
+	font-size: 4em ;
+	font-family: var(--altFont);
+	width: var(--containerElementWidth);
+	margin: var(--paddingLarge);
+}
+
+
+h6{/*###Experimental*/
+	text-align: center;
+	font-family: var(--headFont);
+	font-size: 10em ;
+	color: var(--color1);
+	margin: var(--paddingLarge) ;
+}
+
+
+/*"only screen and" to stop IE8-, this will process media queries differently.
+*Phone screens are generally 600px or smaller. This accomodates them!
+*/
+@media only screen and (max-width: 601px) {
+
+nav{
+	display:none;
+}
+
+.mobile-nav{
+	display: inline;
+}
+
+.rowContainer{
+	clear: both;/*This is the only element on this line!*/
+	border-style: none;
+	overflow: hidden;
+    	width: var(--containerElementWidth);
+	height: auto;
+	margin: auto;
+	padding: var(--paddingStandard) var(--paddingStandard) var(--paddingStandard) var(--paddingStandard);
+	text-align: center;
+}
+
+left, right, third{/*Not applicable in mobile view!
+
+}
+
+.inline{
+	display: block;
+	float: none;
+	margin: var(--paddingStandard) auto;
+}
+
+}
+
+
+
+/*
+Hamburger Menu icon adapted from w3schools
+https://www.w3schools.com/howto/howto_css_menu_icon.asp
+*/
+
+.bar1, .bar2, .bar3 {
+	content:"-";
+	font-size:20;
+	
+	width: 1.4em;
+	height: 0.2em;
+	
+	background-color: white;
+	color: green;
+	margin: 0.2em 0;
+	transition: 0.4s;
+}
+
+.bar1 .change {
+	-webkit-transform: translate(-9px, 6px);
+	transform: translate(-9px, 6px);
+}
+
+.bar2 .change {opacity: 0;}
+
+.bar3 .change {
+    -webkit-transform: translate(-8px, -8px);
+    transform: translate(-8px, -8px);
+}

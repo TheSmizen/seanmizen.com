@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./styles/style.css">
+	<meta name="author" content="Sean Mizen">
+	<title>Sean's site</title>
+	<meta name="description" content="Homepage for Sean Mizen.">
+
+	<link rel="icon" type="image/vnd.microsoft.icon" href="./res/favicon.ico" />
+	<!--favicon source: https://www.favicon-generator.org/-->
+</head>
+<body>
+
+<header>
+<div id="homeButton"><a href="./index.html">Home</a></div>
+<nav><!--Accesibility: nav tends not to be read by screen reading bots! Yay for the blind? This is also an HTML5 feature, instead of using a div/nav class.-->
+	<ul>
+		<li><a href="./about.html">About Me</a></li>
+		<li><a href="./gallery.html">Gallery</a></li>
+		<li><a href="./contact.html">Contact Me</a></li>
+	</ul>
+</nav>
+
+<div class="mobile-nav" onclick="menuToggle">
+	<div class="bar1"></div>
+	<div class="bar2"></div>
+	<div class="bar3"></div>
+</div>
+</header>
+
+<div class='heroImg'>
+	<div class="heroText">
+		<h1>Sean Mizen: Developer</h1>
+	</div>
+</div>
+
+<div class="subtitle"><h3>Something about me being a developer</h3></div>
+
+<p2>
+Example p2 paragraph
+</p2>
+
+
+<div class="rowContainer">
+	<div class="inline left third"><a href="./Gallery.html"><img src="https://i.imgur.com/3cTIfYZ.jpg" alt="Test##" /></a></div>
+	
+	<div class="inline right third"><img src="https://i.imgur.com/k4cCWNf.jpg" alt="Test##" /></div>
+	
+	<div class="inline center third"><img src="https://i.imgur.com/PaZTejf.jpg" alt="Test##" /></div>
+</div>
+
+<p1><!-- p1 acts as rowContainer-->
+Example paragraph (p1)<em>something</em>
+</p1>
+
+<footer>something else</footer>
+
+<script src="./scripts/default.js"></script>
+</body>
