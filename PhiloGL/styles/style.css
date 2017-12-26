@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css?family=Timmana');
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root{/*Global css vars*/
+	--color1:#667290;/* Mauve */
+	--color2:#8D9DB7;/* Tone 2 */
+	--color3:#BCC9D6;/* Tone 3 */
+	--color4:#DDE3E5;/* Tone 4 */
+	--color5:#EFC6C4;/* pink-red */
+	--color6:#F1E3DC;/* cream */
+	
+
+	/*z-index goes from 4 (important/overlays) 3 (header bar), 2 (hero/banner), 1(content)*/
+	/*z-index -1 makes hyperlinks, highlighting, and a lot of interactivity unusable!*/
+
+	--z-index-important: 4;
+	--z-index-top: 3;
+	--z-index-middle: 2;
+	--z-index-bottom: 1;
+	
+	--barColor:var(--color1);
+	
+	--headFont: 'Signika Negative';
+	/*--altFont: 'Timmana';*/
+	--altFont: 'Signika Negative';
+	--paraFont: 'Open Sans';
+	
+	--paddingStandard: 10px;
+	--paddingLarge: 50px;
+	
+	--containerElementWidth: 90vw;
+	/*This sets a "standard margin" for all elements without being a margin*/
+}
+
+body *{
+	box-sizing:border-box;
+	font-family:var(--parafont);
+/*A very unlikeable default setting is that sizing an element only accounts for the content, not padding also.
+Amended here.*/
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #FFF;
+}
+
+header{
+	overflow: hidden;
+	padding: 0.7em;
+	height: 2.7em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	
+	background-color: var(--barColor);
+	
+	font-family: var(--headFont);
+	color: white;
+	font-size: 3.8vmin;
+	z-index: var(--z-index-top);
+	
+	transition-property: height;
+	transition-duration: 0.5s;
+}
+
+#homeButton {
+	margin-left: 1vmin;
+	float: left;
+	font-size: 4vmin;
+	
+	transition-property: all;/*transformations (and others) will now be smooth*/
+	transition-duration: 0.5s;
+}
+
+nav, .nav-menu{
+	margin-right: 1vmin;
+	float: right;
+}
+
+.nav-menu{
+	display: none;
+}
+
+footer{
+	overflow: hidden;
+	padding: var(--paddingStandard);
+	bottom: 0;
+	width: 95%;
+	margin:0 auto;/*Align center*/
+	
+	background-color: var(--barColor);
+	
+	font-family: var(--paraFont);
+	color: white;
+	text-decoration: none;/*no underlines*/
+	z-index: var(--z-index-middle);
+}
+
+a {
+	text-decoration: none;/*No underline*/
+}
+
+.heroText, .bannerText{/*heroText, heroImg for use in home page*/
+	width: 100%;
+	vertical-align: middle;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	
+	font-family: var(--headFont);
+    text-shadow: #000 0px 0px 10px;
+	color: var(--color6);
+	font-size: 8vmin;
+}
+
+.bannerText{
+	color: var(--color5);
+}
+
+.heroImg, .bannerImg{/*heroText, heroImg for use in home page*/
+	margin: 5vmin 0px 0px 0px;
+	padding: 0;
+	height: 85vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: var(--z-index-middle);
+	display: flex;
+}
+
+.heroImg {
+	background-image: url("https://i.imgur.com/ez2wu5Y.jpg");
+	
+}
+.bannerImg{/*bannerImg for use in sub pages*/
+	background-image: url("../res/SeanMizen5.jpg");
+	height: 35vh;
+}
+
+#CanvasGen1{
+	width:90%;
+	height:90%;
+}
+
+.rowContainer {
+	clear: both;/*This is the only element on this line!*/
+	border-style: none;
+	overflow: hidden;
+    width: 90%;
+	height: auto;
+	text-align: justify;
+	margin: var(--paddingStandard) auto;
+	padding-bottom: var(--paddingStandard);
+}
+
+.borderBottom{
+	border-bottom: 2px solid var(--color2);
+}
+
+.borderTop{
+	border-top: 2px solid var(--color2);
+}
+
+.borderLeft{
+	border-left: 2px solid var(--color2);
+}
+
+.borderRight{
+	border-right: 2px solid var(--color2);
+}
+
+.main-content{
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+	font-family: var(--paraFont);
+}
+
+.main-content a{
+	color: var(--color2);
+}
+.main-content a:visited{
+	color: var(--color4);
+}
+
+h1 {/*Main page only*/
+
+	text-align: center;
+	font-family: var(--headFont);
+	/*font-size: 6em;*/
+	font-size: 8vmin;
+}
+
+h2 {/*Header for sub-pages*/
+	text-align: center;
+	font-family: var(--headFont);
+	font-size: 6vmin ;
+	margin: var(--paddingLarge) ;
+}
+
+h3 {
+	text-align: center;
+	font-size: 4vmin;
+	font-family: var(--altFont);
+	color: var(--color1);
+	/*width: var(--containerElementWidth);*/
+	margin: var(--paddingStandard);
+}
+
+h4 {/*h4 but smaller and inherits text alignment*/
+	text-align: center;
+	font-size: 2em;
+	font-family: var(--altFont);
+	color: var(--color3);
+	/*width: var(--containerElementWidth);*/
+	margin: var(--paddingStandard);
+}
+
+h6{/*###Experimental*/
+	text-align: center;
+	font-family: var(--headFont);
+	font-size: 10em ;
+	color: var(--color1);
+	margin: var(--paddingLarge) ;
+}
+
+.inline{
+	clear: none; /*overwrite p1,p2,p3*/
+	position: relative;
+	overflow: hidden;
+	border-style: none;
+	margin: 0;
+	z-index: var(--z-index-bottom);/*Does not overwrite header*/
+	display: inline-block;
+}
+
+.left{
+	text-align: left;
+	float: left;
+}
+
+.center{
+	text-align: center;
+	float: none;
+	margin: 0 auto;
+}
+
+.right{
+	text-align: right;
+	float: right;
+}
+
+.half{
+	min-width: 200px;
+	width: 40vmax;
+}
+
+.third{
+	min-width: 100px;
+	width: 25vmax;
+}
+
+.quarter{
+	min-width: 100px;
+	width: 20vmax;
+}
+
+.map iframe{
+	height:60vmin;
+	width:80vmax;
+}
+
+.inline li{
+	font-family: var(--altFont);
+	list-style-type: none;
+}
+
+.inline img{
+	width: 100%;
+	width: 25vmax;
+	height: auto;
+}
+
+.gallery{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.imgRollover{/*Holder span for images below*/
+	background-color: var(--color2);
+	overflow:hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height:100%;
+	margin:10px;
+	width: 50vmax;
+	opacity: 0;
+	transition: .5s ease;
+}
+
+.imgContainer{
+	position:relative;
+	width:33%;
+}
+
+.gallery img{
+	height:90%;
+	margin:10px;
+	padding:10px;
+	transition:0.5s;
+	z-index:var(--z-index-middle);
+}
+
+.imgContainer:hover .imgRollover {
+	opacity: 1;
+}
+
+.imgText{
+	color: white;
+	font-size: 2em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);/*Microsoft accesibility*/
+	text-shadow: #000 0px 0px 5px;
+}
+
+
+
+
+.gallery-button{
+	
+}
+
+.gallery-small{
+	width: 100vmin;
+}
+
+.gallery-large{
+	
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+}
+
+nav li + li::before {/*Only appears between elements*/
+	content: " - "
+}
+
+header a:link , footer a:link{
+	color: white; 
+	background-color: transparent; 
+	text-decoration: none;
+}
+
+header a:visited , footer a:visited{
+	color: var(--color5);
+	background-color: transparent;
+	text-decoration: none;
+}
+
+header a:visited{/*Order: this must be below a:visited for higher order of precedence*/
+	color: white;
+}
+
+.introVideo{
+	width: 100%;
+	height: 60vmin;
+}
+
+
+/*"only screen and" to stop IE8-, this will process media queries differently.
+*Phone screens are generally 600px or smaller. This accomodates them!
+*/
+@media only screen and (min-width: 601px){
+	nav{/*Nav bar hides to the right. When nav-menu div is clicked, it toggles a class, allowing nav to squeeze back in.*/
+	display: block;
+	transform: none;
+}
+}
+@media only screen and (max-width: 600px) {
+
+	nav{/*Nav bar hides to the right. When nav-menu div is clicked, it toggles a class, allowing nav to squeeze back in.*/
+		display:none;
+		width: 0%;
+		float: right;
+		/*transform: translateX(100%);*/
+	}
+
+	.open nav{/*visible nav bar.*/
+		display: inline-block;
+		width: 100%;
+		float:right;
+		transform: translateY(1.5em);
+		/*background-color: var(--color2);*/
+		text-align: center;
+	}
+		
+	.open #homeButton{
+		transform: translateX(1em) translateY(1em) scale(2,2);
+	}
+	
+
+	header.open{
+		height: 6em;/*open up space for menu*/
+	}
+
+	.nav-menu{
+		display: block;
+	}
+
+	.rowContainer{
+		clear: both;/*This is the only element on this line!*/
+		overflow: hidden;
+		width: var(--containerElementWidth);
+		height: auto;
+		margin: auto;
+		padding: 10px var(--paddingStandard) 10px var(--paddingStandard);
+		text-align: center;
+	}
+
+	.left, .right, .third, .quarter{/*Not applicable in mobile view!*/
+		text-align: center;
+	/*
+		float: none;
+		clear: both;
+		margin 0 auto;
+		min-width: 200px;
+		/*width: 40vmax;*/
+		width: 100%;/*this switches all to vertical*/
+	}
+
+	.inline{
+		display: block;
+		float: none;
+		margin: var(--paddingStandard) auto;
+	}
+	
+	.inline img{
+		width: 50vmax;
+	}
+
+
+	footer{
+		width: 100vmin;
+	}
+}
+
+/*
+Hamburger Menu icon adapted from w3schools
+https://www.w3schools.com/howto/howto_css_menu_icon.asp
+*/
+
+.bar1, .bar2, .bar3 {
+	width: 1.4em;
+	height: 0.2em;
+	
+	background-color: white;
+	color: green;
+	margin: 0.2em 0;
+	transition: 0.4s;
+}
+
+
+/*to explain the transition: top and bottom bars (bar1, bar3) translate down and up respectively.
+They meanwhile lose opacity (opacity: 0).
+This gives the illusion of the bars merging into one, but really it's bar2 being the only survivor.*/
+
+.open .bar1 {
+	-webkit-transform: translate(0px, 12px);
+	transform: translate(0px, 12px);
+	opacity: 0;
+}
+
+.open .bar2{
+	-webkit-transform: translate(0px, 6px);
+	transform: translate(0px, 6px);
+	opacity: 0;
+}
+
+.open .bar3 {
+	opacity: 1;
+}
+
+.band-headline{
+	font-family:var(--altFont);
+	font-size: 3em;
+}
+.band-headline em{
+	font-family:consolas;
+}
+	
+.band-household{
+	font-family:var(--altFont);
+	font-size:2em;
+}
+.band-small{
+	font-family:var(--paraFont);
+	font-size:1.5em;
+	margin:0 auto;
+}
+
+.band-headline, .band-household, .band-small{
+	text-align:center;
+	display: block;
+}
+
+dl dt{
+	font-family: var(--headFont);
+	text-align: inherit;
+}
+
+dl dd{
+	font-family: var(--paraFont);
+	text-align: inherit	; /*Fill the line*/
+	margin: 0;
+}
+
+reviewFont dl dt{
+	font-size:233px;
+}
+reviewFont dl dt{
+	font-size:20px;
+}
+
+/*This is confusing; it only worked after a bit of experimentation.
+dt and dd follow the same nth pattern, but you still have to specify that you're editing that tyle of child.
+i.e.
+<dt> - 4n+1: this is the first title.
+<dd> - 4n+2: this is the first description.
+<dt> - 4n+3: this is the second title.
+<dd> - 4n+0: this is the second description.
+
+dt:nth-child(x) only applies to dt tags.
+if you did dt:nth-child(4n+2){rules}, it would do nothing, because child (4n+2) is a dd tag,
+even though it's the 4n+2th child.
+Strange, but the below rules work.
+*/
+.sixElement *{
+	clear: none;
+	position: relative;
+	/*margin: 0;*/
+	width:75%;
+	z-index: var(--z-index-bottom);/*Does not overwrite header*/
+	display: block;
+}
+
+.sixElement dt:nth-child(6n+1){/*first title*/
+	text-align: left;
+	float:left;
+}
+.sixElement dd:nth-child(6n+2){/*First description*/
+	text-align: left;
+	padding-left: var(--paddingStandard);
+	float:left;
+	
+}
+.sixElement div:nth-child(6n+3){/*First Image, right*/
+	padding: 50px;
+	text-align:right;
+	/*float: right;
+	/*background-image:url(https://i.imgur.com/PaZTejf.jpg);*/
+	width:50px;
+	height:50px;
+	position:relative;
+	right:0;
+	display:none;/*CODE DEPRECATED: The images didn't work.
+	They were going to be on the opposite side of the picture to the person.*/
+}
+
+.sixElement dt:nth-child(6n+4){/*second title*/
+	text-align: right ;
+	float:right;
+}
+
+.sixElement dd:nth-child(6n+5){/*Second description*/
+	text-align: right;
+	float:right;
+	padding-right: var(--paddingStandard);
+}
+
+.sixElement div:nth-child(6n+0){/*Second image, left*/
+	/*float: left;
+	background-image:url(https://i.imgur.com/PaZTejf.jpg);*/
+	width:20%;
+	height:10px;
+	padding: 50px;
+	text-align:left;
+	display:none;/*CODE DEPRECATED: The images didn't work.
+	They were going to be on the opposite side of the picture to the person.*/
+}
+
+
+/*####*/
+
+.fourElement dt:nth-child(4n+1){/*first title*/
+	text-align: left;
+	padding-left: 0;
+}
+
+.fourElement dd:nth-child(4n+2){/*First description*/
+	text-align: left;
+	padding-left: var(--paddingStandard);
+}
+
+.fourElement dt:nth-child(4n+3){/*second title*/
+	text-align: right ;
+	padding-left: 0;
+}
+
+.fourElement dd:nth-child(4n+0){/*Second description*/
+	text-align: right;
+	padding-right: var(--paddingStandard);
+}

@@ -20,7 +20,13 @@ function menuToggle(){
     	};*/
     	//test();
 	//Activate to test javascript is working
-	
+
+	let c = document.getElementById(“exampleCanvas");
+	let ctx=c.getContext("2d");
+	ctx.fillStyle="#FF0000";
+	ctx.fillRect(0,0,150,75);
 
 }//Close declaration
 )();//Run script
+
+
